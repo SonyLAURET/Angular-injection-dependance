@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Formation } from '../Formation';
 import { FormationService } from '../services/FormationService'
+import { FormationApi } from '../services/FormationApi';
 @Component({
   selector: 'app-formation-list',
   templateUrl: './formation-list.component.html',
-  styleUrls: ['./formation-list.component.css']
+  styleUrls: ['./formation-list.component.css'],
+  providers:[FormationService]
 })
 export class FormationListComponent implements OnInit {
 
   formations: Array<Formation>;
-  constructor(private formationService:FormationService) { }
+  constructor(private formationService: FormationService) { }
 
   ngOnInit() {
-    this.formations=this.formationService.getFormations();
+    this.formationService.getFormations().then(value => this.formations = value);
   }
 
 }

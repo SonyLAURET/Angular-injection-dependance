@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormationListComponent } from './formation-list/formation-list.component';
 import  {FormationService} from './services/FormationService'
+import { FormationApi } from './services/FormationApi';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import  {FormationService} from './services/FormationService'
   imports: [
     BrowserModule
   ],
-  providers: [FormationService],
+  providers:[FormationApi],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
