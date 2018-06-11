@@ -13,7 +13,6 @@ import  {FormationService} from './services/FormationService'
   imports: [
     BrowserModule
   ],
-  providers: [FormationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
